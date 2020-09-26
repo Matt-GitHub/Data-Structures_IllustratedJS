@@ -1,7 +1,7 @@
 import LinkedList from '../Insert_Tail';
 
 describe('testing insert tail functionality of linked list', () => {
-  test('initalization of linked list should result in head and tail being null', () => {
+  test('initialization of linked list should result in head and tail being null', () => {
     let LL = new LinkedList();
     expect(LL.head && LL.tail).toBe(null);
   });
