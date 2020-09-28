@@ -58,7 +58,7 @@ class LinkedList {
       // Store the current head as a temp variable
       let temp = this.head;
       // Reassign the head node to equal => newNode
-      this.head = newNode;
+      this.head = new_node;
       // Set the new head's next value => old head (temp)
       this.head.next = temp;
       return;
