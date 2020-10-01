@@ -23,7 +23,7 @@ class LinkedList {
   }
 
   removeDuplicates() {
-    if (this.head === null || this.head.next === null) return head;
+    if (this.head === null || this.head.next === null) return this.head;
     let current = this.head;
     while (current.next !== null) {
       if (current.value !== current.next.value) {
