@@ -22,32 +22,39 @@ class LinkedList {
     }
   }
 
+  // Detect Cycle does not take any parameters
+  // Detect a cycle will return a boolean value of true or false
   detectCycle() {
+    // If the linked list is empty
+    // Return false, the linked list is not a cycle
     if (this.head === null) {
       return false;
     }
-
+    // Create 2 pointers: slow and fast
+    // Both pointers will point to the head node
     let slow = this.head;
     let fast = this.head;
+    // We need to iterate over the linked list until we meet 1 of 2 conditions
+    // Either the fast tracker will hit null
+    // Or the fast and slow pointer will meet
+    // In the case they meet we will return true
+
+    // While fast and fast.next do not equal null - Iterate over the linked list
     while (fast !== null && fast.next !== null) {
+      // Set slow to equal the next value in the linked list
+      // Set fast to equal 2 values ahead in the linked list
       slow = slow.next;
       fast = fast.next.next;
-
+      // If the slow and fast value are the same node
+      // Return true
       if (slow == fast) {
         return true;
       }
     }
+    // The fast tracker hit a null value (end of linked list)
+    // Return false
     return false;
   }
 }
 
-let test = new LinkedList();
-
-test.insertTail(1);
-test.insertTail(2);
-test.insertTail(2);
-test.insertTail(4);
-test.insertTail(5);
-test.insertTail(6);
-test.tail.next = test.head.next.next.next;
-console.log(test.detectCycle());
+export default LinkedList;
