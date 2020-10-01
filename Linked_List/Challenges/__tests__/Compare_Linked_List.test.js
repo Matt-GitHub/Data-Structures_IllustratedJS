@@ -31,6 +31,24 @@ describe('testing compare functionality of linked list', () => {
     expect(compareLinkedList(LL1, LL2)).toBe(false);
   });
 
+  test('comparing 2 linked list with matching nodes and matching lengths should return false', () => {
+    let LL1 = new LinkedList();
+    let LL2 = new LinkedList();
+    LL1.insertTail('firstValue');
+    LL1.insertTail('secondValue');
+    LL1.insertTail('thirdValue');
+    LL1.insertTail('fourthValue');
+    LL1.insertTail('fifthValue');
+    LL1.insertTail('sixthValue');
+    LL2.insertTail('firstValue');
+    LL2.insertTail('secondValue');
+    LL2.insertTail('thirdValue');
+    LL2.insertTail('fourthValue');
+    LL2.insertTail('fifthValue');
+    LL2.insertTail('sixthValue');
+    expect(compareLinkedList(LL1, LL2)).toBe(true);
+  });
+
   test('comparing 2 linked list with matching nodes but different lengths should return false', () => {
     let LL1 = new LinkedList();
     let LL2 = new LinkedList();
@@ -40,6 +58,24 @@ describe('testing compare functionality of linked list', () => {
     LL2.insertTail('firstValue');
     LL2.insertTail('secondValue');
     LL2.insertTail('thirdValue');
+    LL2.insertTail('differentValue');
+    expect(compareLinkedList(LL1, LL2)).toBe(false);
+  });
+
+  test('comparing 2 linked list with non matching nodes and matching lengths should return false', () => {
+    let LL1 = new LinkedList();
+    let LL2 = new LinkedList();
+    LL1.insertTail('firstValue');
+    LL1.insertTail('secondValue');
+    LL1.insertTail('thirdValue');
+    LL1.insertTail('fourthValue');
+    LL1.insertTail('fifthValue');
+    LL1.insertTail('sixthValue');
+    LL2.insertTail('firstValue');
+    LL2.insertTail('secondValue');
+    LL2.insertTail('thirdValue');
+    LL2.insertTail('fourthValue');
+    LL2.insertTail('fifthValue');
     LL2.insertTail('differentValue');
     expect(compareLinkedList(LL1, LL2)).toBe(false);
   });
